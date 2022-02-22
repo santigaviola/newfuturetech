@@ -14,6 +14,11 @@
   </div>
 </div>
 
-<%= link_to 'regresar al marketplace', nfts_path %>
-<%= link_to 'edit',  edit_nft_path(@nft) %>
-<%= link_to 'delete', nft_path(@nft), method: :delete %>
+<div class="footer mt-5">
+  <%= link_to 'Marketplace', nfts_path, class: "btn btn-dark" %>
+  <%= link_to 'Edit NFT',  edit_nft_path(@nft), class: "btn btn-dark" %>
+  <%= link_to 'Delete NFT', nft_path(@nft), class: "btn btn-dark", method: :delete %>
+  <div class="footer-copyright">
+    This footer is made with <i class="fas fa-heart"></i> at Nft Marketplace
+  </div>
+</div>

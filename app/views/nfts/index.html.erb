@@ -1,8 +1,9 @@
-<h1>N.F.T. Marketplace </h1>
+<div class="la_caja">
+<h1 class="text-center mb-3">N.F.T. Marketplace </h1>
 <div class="container">
-  <div class="row">
+  <div class="row" id="caja_tarjetas">
     <% @nfts.each do |nft| %>
-    <div class="col-4">
+    <div class="col-3 pt-4" id="tarjetas_main">
     <%= link_to  nft_path(nft) do %>
       <%= image_tag nft.image_url %>
       <% end  %>
@@ -13,6 +14,13 @@
     </div>
   <% end %>
   </div>
-  <%= link_to 'crear nft',  new_nft_path %>
+</div>
+
+<div class="footer mt-5">
+<%= link_to 'Create nft',  new_nft_path, class: "btn btn-dark" %>
+  <div class="footer-copyright">
+    This footer is made with <i class="fas fa-heart"></i> at Nft Marketplace
+  </div>
+</div>
 
 </div>
