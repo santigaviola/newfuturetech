@@ -1,0 +1,19 @@
+<h1><%= @nft.name %></h1>
+<div class="container">
+  <div class="imagen">
+    <%= image_tag @nft.image_url %>
+    <p>Owener: <%= @nft.user %></p>
+  </div>
+
+  <div class="description">
+    <h2>Description</h2>
+    <%= @nft.description %>
+    <% if @nft.published %>
+      <%= "Price:#{@nft.price}" %>
+    <% end  %>
+  </div>
+</div>
+
+<%= link_to 'regresar al marketplace', nfts_path %>
+<%= link_to 'edit',  edit_nft_path(@nft) %>
+<%= link_to 'delete', nft_path(@nft), method: :delete %>

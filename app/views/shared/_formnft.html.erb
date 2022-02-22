@@ -1,0 +1,8 @@
+<%= simple_form_for [@nft] do |f| %>
+<%= f.input :name %>
+<%= f.input :description %>
+<%= f.input :image_url %>
+<%= f.input :published %>
+<%= f.input :price %>
+<%= f.submit class: "btn btn-primary btn-lg" %>
+<% end  %>
