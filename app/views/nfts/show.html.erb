@@ -13,3 +13,5 @@
 </div>
 
 <%= link_to 'regresar al marketplace', nfts_path %>
+<%= link_to 'edit',  edit_nft_path(@nft) %>
+<%= link_to 'delete', nfts_path(@nft), method: :delete %>
