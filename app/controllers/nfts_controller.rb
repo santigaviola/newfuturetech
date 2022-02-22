@@ -16,7 +16,7 @@ class NftsController < ApplicationController
       @nft = Nft.new(nft_params)
       @nft.user = current_user
       if @nft.save
-        redirect_to nft_path(@nft)
+        redirect_to nfts_path
       else
         render "new"
       end
