@@ -1,0 +1,15 @@
+<h1>N.F.T. Marketplace </h1>
+<div class="container">
+  <div class="row">
+    <% @nfts.each do |nft| %>
+    <div class="col-4">
+    <%= image_tag 'nft.image_url' %>
+    <div class="desc">
+    <h3> <%= nft.name %> </h3>
+    <p> Price:<%= nft.price  %></p>
+    </div>
+    </div>
+  <% end %>
+  </div>
+  
+</div>
