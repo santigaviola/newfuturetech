@@ -10,6 +10,7 @@ class TransactionsController < ApplicationController
   end
 
   def new
+    @nft = Nft.find(params:[:id])
     @transaction = transaction.new
   end
 
@@ -18,6 +19,8 @@ class TransactionsController < ApplicationController
     @transaction.user = current_user
     @nft = nft.find(params[:id])
     if user.money > nft.price
+      user.money -= nft.price
+
 
     if @transaction.save
       redirect_to transaction_path(@transaction)
