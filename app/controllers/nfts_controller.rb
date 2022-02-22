@@ -32,13 +32,13 @@ class NftsController < ApplicationController
   
     def destroy
       @nft.destroy
-      redirect_to nft_path(@nft)
+      redirect_to nfts_path
     end
 
     private
     
     def set_nft
-      @nft = nft.find(params[:id])
+      @nft = Nft.find(params[:id])
     end
 
     def nft_params

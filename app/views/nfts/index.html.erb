@@ -3,7 +3,9 @@
   <div class="row">
     <% @nfts.each do |nft| %>
     <div class="col-4">
-    <%= image_tag 'nft.image_url' %>
+    <%= link_to  nft_path(nft) do %>
+      <%= image_tag nft.image_url %>
+      <% end  %>
     <div class="desc">
     <h3> <%= nft.name %> </h3>
     <p> Price:<%= nft.price  %></p>
@@ -11,5 +13,6 @@
     </div>
   <% end %>
   </div>
-  
+  <%= link_to 'crear nft',  new_nft_path %>
+
 </div>
