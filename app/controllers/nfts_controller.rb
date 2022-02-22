@@ -1,6 +1,5 @@
 class NftsController < ApplicationController
   before_action :set_nft, only:[:show, :update, :edit, :destroy]
-
   
     def index
       @nfts = Nft.all
@@ -10,11 +9,11 @@ class NftsController < ApplicationController
     end
 
     def new
-      @nft = nft.new
+      @nft = Nft.new
     end
   
     def create
-      @nft = nft.new(nft_params)
+      @nft = Nft.new(nft_params)
       @nft.user = current_user
       if @nft.save
     redirect_to nft_path(@nft)
