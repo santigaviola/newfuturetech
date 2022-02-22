@@ -5,6 +5,10 @@ class NftsController < ApplicationController
     @nft = Nft.new
   end
 
+  def index
+    @nfts = Nft.all
+  end
+
   def create
     @nft = Nft.new(nft_params)
     @nft.user = current_user
