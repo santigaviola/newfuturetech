@@ -1,0 +1,15 @@
+<h1><%= @nft.name %></h1>
+<div class="container">
+  <div class="imagen">
+    <%= imag_tag @nft.url %>
+    <p>Owener: <%= @nft.user %></p>
+  </div>
+
+  <div class="description">
+    <h2>Description</h2>
+    <p><%= @nft.description %></p>
+    <% if @nft.published = "true"%> <%= puts "Price:#{@nft.price}" %>
+  </div>
+</div>
+
+<%= link_to 'regresar al marketplace', nfts_path %>
