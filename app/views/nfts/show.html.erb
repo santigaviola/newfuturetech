@@ -26,6 +26,7 @@
   <%= link_to 'Marketplace', nfts_path, class: "btn btn-dark" %>
   <%= link_to 'Edit NFT',  edit_nft_path(@nft), class: "btn btn-dark" %>
   <%= link_to 'Delete NFT', nft_path(@nft), class: "btn btn-dark", method: :delete %>
+  <%= link_to 'Buy NFT', new_nft_transaction_path(@nft), class: "btn btn-dark"%>
   </div>
   <div class="footer-copyright">
     This footer is made with <i class="fas fa-heart"></i> at Nft Marketplace
