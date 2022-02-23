@@ -35,10 +35,26 @@ body {
   font-style: normal;
 }
 
+.bigger-box {
+  padding: auto;
+  display: flex;
+  justify-content: space-around;
+}
+
 .box {
   padding: 0rem 2rem;
+  width: 50%;
+  border: 1px lightgrey solid;
+  box-shadow: 4px 4px 16px 5px rgba(0, 0, 0, 0.83);
 }
 
 .imagen img {
   width: 100%;
+}
+
+#stats {
+  width: fit-content;
+  margin-top: 4rem;
+  margin-left: 2rem;
+  background-color: rgba($color: #ffffff, $alpha: 0.4);
 }
