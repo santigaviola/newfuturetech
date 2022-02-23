@@ -1,3 +1,4 @@
+  <%= render 'shared/datosuser' %>
   <h1 class= "text-center"><%= @nft.name %></h1>
 <div class="container mt-5">
 <div class="row" id="carta">
@@ -19,9 +20,10 @@
     </h3>
 </div>
 </div>
+</div>
 
 
-<div class="footer mt-5">
+<div class="footer mt-5 fixed-bottom">
   <div>
   <%= link_to 'Marketplace', nfts_path, class: "btn btn-dark" %>
   <%= link_to 'Edit NFT',  edit_nft_path(@nft), class: "btn btn-dark" %>
