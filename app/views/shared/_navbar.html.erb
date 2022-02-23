@@ -17,6 +17,10 @@
          <!-- <li class="nav-item">
             <%= link_to "Messages", "#", class: "nav-link" %>
           </li> -->
+          <li>
+          Money: <%= current_user.tokens %>
+          User: <%= current_user.email %>
+          </li>
           <li class="nav-item dropdown">
             <%= image_tag "https://scholarlykitchen.sspnet.org/wp-content/uploads/2021/03/NF-RGB_APNG-Logo-300x300.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
