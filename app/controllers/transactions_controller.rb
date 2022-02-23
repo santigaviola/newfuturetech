@@ -1,32 +1,27 @@
 class TransactionsController < ApplicationController
   before_action :set_transaction, only: :show
   def index
-    @transactions = Transaction.all
+    @transactions = policy_scope(Transaction).order(created_at: :desc)
   end
 
   def show
   end
 
-  def new
-    @nft = Nft.find(params[:nft_id])
-    @transaction = Transaction.new
-  end
-
   def create
-    @transaction = Transaction.new(transaction_params)
+    @transaction = Transaction.new
+    authorize @transaction
     @nft = Nft.find(params[:nft_id])
     @transaction.nft = @nft
     @transaction.user = current_user
-    @user = @transaction.user
-    if @user.money >= @nft.price
-      @user.money -= @nft.price
-      if @transaction.save
-        redirect_to transactions_path(@nft)
-      else
-        render "new"
-      end
-    else
-      render "new"
+    if @transaction.user.tokens >= @nft.price
+      @transaction.user.tokens -= @nft.price
+      @nft.user.tokens += @nft.price
+      @nft.user.save
+      @nft.user = @transaction.user
+      @nft.save
+      @transaction.save
+      @transaction.user.save
+      redirect_to nft_path(@nft)
     end
   end
 

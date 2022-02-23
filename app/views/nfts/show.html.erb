@@ -3,7 +3,7 @@
 <div class="row" id="carta">
   <div class="imagen col-md-6 col-lg-6">
     <%= image_tag @nft.image_url %>
-    <p>Owner: <%= @nft.user %></p>
+    <p>Owner: <%= @nft.user.email %></p>
   </div>
 
   <div class="description col-md-6 col-lg-6">
@@ -26,7 +26,7 @@
   <%= link_to 'Marketplace', nfts_path, class: "btn btn-dark" %>
   <%= link_to 'Edit NFT',  edit_nft_path(@nft), class: "btn btn-dark" %>
   <%= link_to 'Delete NFT', nft_path(@nft), class: "btn btn-dark", method: :delete %>
-  <%= link_to 'Buy NFT', new_nft_transaction_path(@nft), class: "btn btn-dark"%>
+  <%= link_to 'Buy NFT', nft_transactions_path(@nft), class: "btn btn-dark", method: :post%>
   </div>
   <div class="footer-copyright">
     This footer is made with <i class="fas fa-heart"></i> at Nft Marketplace
