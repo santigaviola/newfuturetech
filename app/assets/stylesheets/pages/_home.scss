@@ -1,4 +1,6 @@
 // Specific CSS for your home-page
+@import url("https://use.typekit.net/jmk3xov.css");
+
 .container {
   text-align: center;
   padding: auto;
@@ -19,8 +21,6 @@ p {
   text-align: center;
 }
 
-@import url("https://use.typekit.net/jmk3xov.css");
-
 canvas {
   position: fixed;
   top: 0;
@@ -37,4 +37,8 @@ body {
 
 .box {
   padding: 0rem 2rem;
+}
+
+.imagen img {
+  width: 100%;
 }
