@@ -1,7 +1,5 @@
 class TransactionsController < ApplicationController
-
-  before_action :set_transaction, only:[:show, :update, :edit, :destroy]
-
+  before_action :set_transaction, only: %i[show]
   def index
     @transactions = Transaction.all
   end
@@ -10,20 +8,14 @@ class TransactionsController < ApplicationController
   end
 
   def new
-    @nft = Nft.find(params:[:id])
-    @transaction = transaction.new
+    @transaction = Transaction.new
   end
 
   def create
-    @transaction = transaction.new(transaction_params)
+    @transaction = Transaction.new(transaction_params)
     @transaction.user = current_user
-    @nft = nft.find(params[:id])
-    if user.money > nft.price
-      user.money -= nft.price
-
-
     if @transaction.save
-      redirect_to transaction_path(@transaction)
+      redirect_to transactions_path
     else
       render "new"
     end
@@ -32,11 +24,10 @@ class TransactionsController < ApplicationController
   private
 
   def set_transaction
-    @transaction = transaction.find(params[:id])
+    @transaction = Transaction.find(params[:id])
   end
 
-  def transaction_params
+  def nft_params
     params.require(:transaction).permit(:user, :nft)
   end
-
 end

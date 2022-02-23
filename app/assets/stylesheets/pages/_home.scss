@@ -5,6 +5,8 @@
 }
 h1 {
   font-size: 60px;
+  font-family: elevon, sans-serif;
+  text-align: center;
 }
 a {
   text-decoration: none;
@@ -12,10 +14,27 @@ a {
 h2 {
   margin-top: 200px;
 }
-body {
-  font-family: "Roboto Condensed", sans-serif;
-  letter-spacing: 1px;
+
+p {
+  text-align: center;
 }
-.box {
+
+@import url("https://use.typekit.net/jmk3xov.css");
+
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -100;
+}
+
+body {
+  font-family: elevon, sans-serif;
+  letter-spacing: 1px;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 50px;
+  
+ .box {
   padding: 0rem 2rem;
 }
