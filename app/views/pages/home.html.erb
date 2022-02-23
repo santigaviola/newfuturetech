@@ -4,25 +4,9 @@
 
 <canvas id="home"></canvas>
 <%= javascript_pack_tag 'home'%>
+<%= link_to 'Marketplace', nfts_path, class: "text-center btn btn-dark" %>
 
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
-<h1>N.F.T. Marketplace </h1>
-<div class="container">
-  <div class="row">
-    <% @nfts.each do |nft| %>
-    <div class="col-4">
-    <%= link_to  nft_path(nft) do %>
-      <%= image_tag nft.image_url %>
-      <% end  %>
-    <div class="desc">
-    <h3> <%= nft.name %> </h3>
-    <p> Price:<%= nft.price  %></p>
-    </div>
-    </div>
-  <% end %>
-  </div>
-  <%= link_to 'crear nft',  new_nft_path %>
-</div>
 
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
