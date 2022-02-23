@@ -1,18 +1,28 @@
-<h1>N.F.T. Marketplace </h1>
-<div class="container">
-  <div class="row">
-    <% @nfts.each do |nft| %>
-    <div class="col-4">
-    <%= link_to  nft_path(nft) do %>
-      <%= image_tag nft.image_url %>
-      <% end  %>
-    <div class="desc">
-    <h3> <%= nft.name %> </h3>
-    <p> Price:<%= nft.price  %></p>
+ <h1 class = "text-center ">N.F.T. Marketplace</h1> 
+        <section class="module-small">
+    <div class="container">
+      <div class="row multi-columns-row">
+      <% @nfts.each do |nft|  %>
+        <div class="col-sm-6 col-md-3 col-lg-3">
+          <div class="shop-item">
+            <div class="shop-item-image"><img src=" <%= nft.image_url %>" alt="NFT"/>
+              <div class="shop-item-detail"><a class="btn btn-round btn-b"><span class="icon-basket"><%= link_to 'More info', nft_path(nft), class: "btn btn-dark btn-lg" %></span></div>
+            </div>
+            <h4 class="shop-item-title font-alt">
+            <%= nft.name %>
+            </h4>Price:<%= nft.price %>
+          </div>
+        </div>
+        <% end  %>
+      </div>
     </div>
-    </div>
-  <% end %>
-  </div>
-  <%= link_to 'crear nft',  new_nft_path %>
+    </section>
 
+
+
+<div class="footer">
+<%= link_to 'Create nft',  new_nft_path, class: "btn btn-dark" %>
+  <div class="footer-copyright">
+    This footer is made with <i class="fas fa-heart"></i> at Nft Marketplace
+  </div>
 </div>

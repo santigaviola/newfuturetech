@@ -1,19 +1,33 @@
-<h1><%= @nft.name %></h1>
-<div class="container">
-  <div class="imagen">
+  <h1 class= "text-center"><%= @nft.name %></h1>
+<div class="container mt-5">
+<div class="row" id="carta">
+  <div class="imagen col-md-6 col-lg-6">
     <%= image_tag @nft.image_url %>
-    <p>Owener: <%= @nft.user %></p>
+    <p>Owner: <%= @nft.user %></p>
   </div>
 
-  <div class="description">
-    <h2>Description</h2>
-    <%= @nft.description %>
-    <% if @nft.published %>
-      <%= "Price:#{@nft.price}" %>
+  <div class="description col-md-6 col-lg-6">
+    <div>
+    <h3>Description</h3> 
+    <%=@nft.description %>
+    </div>
+    <h3><% if @nft.published %>
+      <%="Price:#{@nft.price}" %>
+      <%else  %>
+      <%= "Not for sale" %>
     <% end  %>
-  </div>
+    </h3>
+</div>
 </div>
 
-<%= link_to 'regresar al marketplace', nfts_path %>
-<%= link_to 'edit',  edit_nft_path(@nft) %>
-<%= link_to 'delete', nft_path(@nft), method: :delete %>
+
+<div class="footer mt-5">
+  <div>
+  <%= link_to 'Marketplace', nfts_path, class: "btn btn-dark" %>
+  <%= link_to 'Edit NFT',  edit_nft_path(@nft), class: "btn btn-dark" %>
+  <%= link_to 'Delete NFT', nft_path(@nft), class: "btn btn-dark", method: :delete %>
+  </div>
+  <div class="footer-copyright">
+    This footer is made with <i class="fas fa-heart"></i> at Nft Marketplace
+  </div>
+</div>
