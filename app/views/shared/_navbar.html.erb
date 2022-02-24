@@ -12,11 +12,15 @@
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
           <li class="nav-item active">
-            <%= link_to "Home", root_path, class: "nav-link" %>
+            <%= link_to "Home", root_path, class: "nav-link" "White" %>
           </li>
          <!-- <li class="nav-item">
             <%= link_to "Messages", "#", class: "nav-link" %>
           </li> -->
+          <li class="nav-item active">
+           <div class="orange">Money:<%= current_user.tokens %></div>
+           <div class="orange">User:<%= current_user.email %></div>
+          </li>
           <li class="nav-item dropdown">
             <%= image_tag "https://scholarlykitchen.sspnet.org/wp-content/uploads/2021/03/NF-RGB_APNG-Logo-300x300.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
