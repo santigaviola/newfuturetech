@@ -1,0 +1,56 @@
+<%= render 'shared/navbar' %>
+<p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+<%= render 'shared/flashes' %>
+<% if @user.present?  %>
+<%= render 'shared/datosuser' %>
+<% end %>
+<h1 class = "text-center ">List of users</h1>
+
+<section class="module-small">
+  <div class="container">
+  <div class="row">
+<div class="col-10">
+<%= form_tag users_path, method: :get do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Find an user"
+  %>
+</div>
+  <div class="col-2 mb-5">
+  <%= submit_tag "Search", class: "btn btn-dark" %>
+<% end %>
+</div>
+</div>
+</div>
+
+
+    <div class="container">
+      <div class="row multi-columns-row">
+      <% @users.each do |user|  %>
+        <div class="col-sm-6 col-md-3 col-lg-3">
+          <div class="shop-item">
+            <div class="shop-item-image"><img src=" <%= user.nft.first.image_url %>" alt="NFT"/>
+              <div class="shop-item-detail"><a class="btn btn-round btn-b"><span class="icon-basket"><%= link_to 'More info', user_path(user), class: "btn btn-dark btn-lg" %></span></div>
+            </div>
+            <h4 class="shop-item-title font-alt">
+            <%= user.username %>
+          </div>
+        </div>
+        <% end  %>
+      </div>
+    </div>
+    </section>
+
+    <div class="footer mt-5 fixed-bottom">
+  <div>
+  <%= link_to 'Marketplace', nfts_path, class: "btn btn-dark" %>
+  <% if @user.present?  %>
+  <%= link_to 'Profile', user_path(@user), class: "btn btn-dark" %>
+  <% end  %>
+  </div>
+  <div class="footer-copyright">
+    This footer is made with <i class="fas fa-heart"></i> at Nft Marketplace
+  </div>
+</div>

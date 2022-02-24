@@ -2,7 +2,9 @@
 <p class="notice"><%= notice %></p>
 <p class="alert"><%= alert %></p>
 <%= render 'shared/flashes' %>
+<% if @us.present?  %>
 <%= render 'shared/datosuser' %>
+<% end %>
 
 <h1 class= "text-center"><%= @user.username %></h1>
   <section class="module-small">
@@ -23,4 +25,16 @@
       </div>
     </div>
     </section>
+
+    <div class="footer fixed-bottom">
+    <div>
+<%= link_to 'Create nft',  new_nft_path, class: "btn btn-dark" %>
+<%= link_to 'Marketplace', nfts_path, class: "btn btn-dark" %>
+<%= link_to 'Users list',  users_path, class: "btn btn-dark" %>
+</div>
+  <div class="footer-copyright">
+    This footer is made with <i class="fas fa-heart"></i> at Nft Marketplace
+  </div>
+</div>
+
 
