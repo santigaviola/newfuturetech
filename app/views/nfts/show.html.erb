@@ -9,7 +9,7 @@
 <div class="container mt-5">
 <div class="row" id="carta">
   <div class="imagen col-md-6 col-lg-6">
-    <%= image_tag @nft.image_url %>
+    <%= cl_image_tag @nft.photo.key  %>
     <p>Owner: <%= @nft.user.username %></p>
   </div>
 
