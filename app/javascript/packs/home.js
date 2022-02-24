@@ -29,8 +29,8 @@ scene.add(pointLight, ambientLight);
 // Stars
 
 function addStar() {
-  const geometry = new THREE.SphereGeometry(0.25, 24, 24);
-  const material = new THREE.MeshStandardMaterial({ color: 0xff6347 });
+  const geometry = new THREE.SphereGeometry(0.10, 24, 24);
+  const material = new THREE.MeshStandardMaterial({ color: white });
   const star = new THREE.Mesh(geometry, material);
 
   const [x, y, z] = Array(3)
@@ -42,8 +42,8 @@ function addStar() {
 }
 
 function addStar2() {
-  const geometry = new THREE.SphereGeometry(0.25, 24, 24);
-  const material = new THREE.MeshStandardMaterial({ color: 0xff6347 });
+  const geometry = new THREE.SphereGeometry(0.10, 24, 24);
+  const material = new THREE.MeshStandardMaterial({ color: white });
   const star = new THREE.Mesh(geometry, material);
 
   const [x, y, z] = Array(3)
@@ -65,10 +65,11 @@ const torus = new THREE.Mesh(geometry, material);
 torus.position.z -= 100
 scene.add(torus);
 
-// Cubes
+// NFTS
 
 const cubegeometry = new THREE.BoxGeometry( 5, 5, 5 );
-const cubematerial = new THREE.MeshBasicMaterial( {color: 0x00ff00} );
+const myTexture = new THREE.TextureLoader().load(image_url);
+const cubematerial = new THREE.MeshBasicMaterial({ map: myTexture });
 const cube = new THREE.Mesh( cubegeometry, cubematerial );
 cube.position.z -= 100
 scene.add(cube);
@@ -81,7 +82,16 @@ const cube3 = cube.clone();
 cube3.position.x -= 20;
 scene.add(cube3);
 
-// Scroll Animation
+const cube4 = cube.clone();
+cube4.position.x += 10;
+scene.add(cube4);
+
+const cube5 = cube.clone();
+cube5.position.x += 20;
+scene.add(cube5);
+
+
+
 
 function moveCamera() {
   const t = document.body.getBoundingClientRect().top;
@@ -99,12 +109,25 @@ function animate() {
   torus.rotation.y += 0.01;
   torus.rotation.z += 0.01;
 
-  cube.rotation.x += 0.01;
+  cube.rotation.x -= 0.01;
   cube.rotation.y += 0.01;
+  cube.rotation.z += 0.01;
 
   cube2.rotation.x += 0.01;
+  cube2.rotation.y -= 0.01;
+  cube2.rotation.z += 0.01;
 
-  cube3.rotation.z += 0.01;
+  cube3.rotation.x += 0.01;
+  cube3.rotation.y += 0.01;
+  cube3.rotation.z -= 0.01;
+
+  cube4.rotation.x -= 0.01;
+  cube4.rotation.y += 0.01;
+  cube4.rotation.z += 0.01;
+
+  cube5.rotation.x += 0.01;
+  cube5.rotation.y -= 0.01;
+  cube5.rotation.z += 0.01;
 
   renderer.render( scene, camera );
 };
