@@ -7,9 +7,13 @@
         <div class="col-sm-6 col-md-3 col-lg-3">
           <div class="shop-item">
             <h4 class="shop-item-title font-alt"><%= transaction.created_at %></h4>
-            <%= transaction.user %>
-            <%= transaction.nft %>
-            <%= transaction.user.username %>
+            <%= transaction.user.email %>
+            <span class="orange">bought</span>
+            <%= transaction.nft.name %>
+            <span class="orange">from</span>
+            <%= transaction.nft.user.email %>
+            <span class="orange">for</span>
+            <span class=>$</span>
             <%= transaction.nft.price %>
           </div>
         </div>
@@ -17,11 +21,3 @@
     </div>
   </div>
 </section>
-
-
-#  t.bigint "user_id", null: false
-#  t.bigint "nft_id", null: false
-#  t.datetime "created_at", precision: 6, null: false
-#  t.datetime "updated_at", precision: 6, null: false
-#  t.index ["nft_id"], name: "index_transactions_on_nft_id"
-#  t.index ["user_id"], name: "index_transactions_on_user_id"
