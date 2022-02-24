@@ -5,6 +5,7 @@ class TransactionsController < ApplicationController
   end
 
   def show
+    @transactions = policy_scope(Transaction).order(created_at: :desc)
   end
 
   def create
