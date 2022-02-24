@@ -57,6 +57,6 @@ class NftsController < ApplicationController
   end
 
   def nft_params
-    params.require(:nft).permit(:name, :description, :image_url, :published, :price)
+    params.require(:nft).permit(:name, :description, :photo, :published, :price)
   end
 end
