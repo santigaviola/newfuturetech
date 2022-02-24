@@ -2,7 +2,12 @@ class NftsController < ApplicationController
   before_action :set_nft, only:[:show, :update, :edit, :destroy]
 
   def index
-    @nfts = policy_scope(Nft).order(created_at: :desc)
+    if params[:query].present?
+      sql_query = "name ILIKE :query OR description ILIKE :query"
+      @nfts = policy_scope(Nft).where(sql_query, query: "%#{params[:query]}%")
+    else
+      @nfts = policy_scope(Nft).order(created_at: :desc)
+    end
   end
 
   def show

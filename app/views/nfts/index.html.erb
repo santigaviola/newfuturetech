@@ -1,6 +1,19 @@
 <%= render 'shared/datosuser' %>
-<h1 class = "text-center ">N.F.T. Marketplace</h1> 
+<h1 class = "text-center ">N.F.T. Marketplace</h1>
         <section class="module-small">
+        <div class="container">
+
+
+<%= form_tag nfts_path, method: :get do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Find a nft"
+  %>
+
+  <%= submit_tag "Search", class: "btn btn-primary" %>
+<% end %></div>
+
     <div class="container">
       <div class="row multi-columns-row">
       <% @nfts.each do |nft|  %>
