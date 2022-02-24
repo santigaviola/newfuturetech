@@ -1,26 +1,14 @@
 <%= render 'shared/navbar' %>
 <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
+<p class="alert"><%= alert %></p>
 <%= render 'shared/flashes' %>
 <%= render 'shared/datosuser' %>
-<h1 class = "text-center ">N.F.T. Marketplace</h1>
-        <section class="module-small">
-        <div class="container">
 
-
-<%= form_tag nfts_path, method: :get do %>
-  <%= text_field_tag :query,
-    params[:query],
-    class: "form-control",
-    placeholder: "Find a nft"
-  %>
-
-  <%= submit_tag "Search", class: "btn btn-primary" %>
-<% end %></div>
-
+<h1 class= "text-center"><%= @user.username %></h1>
+  <section class="module-small">
     <div class="container">
       <div class="row multi-columns-row">
-      <% @nfts.each do |nft|  %>
+      <% @user.nft.each do |nft|  %>
         <div class="col-sm-6 col-md-3 col-lg-3">
           <div class="shop-item">
             <div class="shop-item-image"><img src=" <%= nft.image_url %>" alt="NFT"/>
@@ -36,11 +24,3 @@
     </div>
     </section>
 
-
-
-<div class="footer fixed-bottom">
-<%= link_to 'Create nft',  new_nft_path, class: "btn btn-dark" %>
-  <div class="footer-copyright">
-    This footer is made with <i class="fas fa-heart"></i> at Nft Marketplace
-  </div>
-</div>
