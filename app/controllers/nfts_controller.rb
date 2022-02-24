@@ -2,6 +2,7 @@ class NftsController < ApplicationController
   before_action :set_nft, only:[:show, :update, :edit, :destroy]
 
   def index
+    @user = current_user
     if params[:query].present?
       sql_query = "name ILIKE :query OR description ILIKE :query"
       @nfts = policy_scope(Nft).where(sql_query, query: "%#{params[:query]}%")
@@ -11,6 +12,7 @@ class NftsController < ApplicationController
   end
 
   def show
+    @user = current_user
     @transaction = Transaction.new
     authorize @transaction
     authorize @nft

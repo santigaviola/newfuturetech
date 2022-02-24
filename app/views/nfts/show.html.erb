@@ -2,13 +2,15 @@
  <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
   <%= render 'shared/flashes' %>
-  <%= render 'shared/datosuser' %>
+ <% if @user.present?  %>
+<%= render 'shared/datosuser' %>
+<% end %>
   <h1 class= "text-center"><%= @nft.name %></h1>
 <div class="container mt-5">
 <div class="row" id="carta">
   <div class="imagen col-md-6 col-lg-6">
     <%= image_tag @nft.image_url %>
-    <p>Owner: <%= @nft.user.email %></p>
+    <p>Owner: <%= @nft.user.username %></p>
   </div>
 
   <div class="description col-md-6 col-lg-6">
