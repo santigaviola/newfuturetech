@@ -13,7 +13,7 @@
       <% @user.nft.each do |nft|  %>
         <div class="col-sm-6 col-md-3 col-lg-3" data-aos="fade-down" data-aos-easing="ease-out-cubic" data-aos-duration="2000" >
           <div class="shop-item">
-            <div class="shop-item-image"><%= cl_image_tag nft.photo.key, height: 300, width: 400, crop: :fill %>
+            <div class="shop-item-image"><%= cl_image_tag nft.photo.key, height: 300, width: 400, crop: :fill, :cloud_name => "dh3mihvcm" %>
               <div class="shop-item-detail"><a class="btn btn-round btn-b"><span class="icon-basket"><%= link_to 'More info', nft_path(nft), class: "btn btn-dark btn-lg" %></span></div>
             </div>
             <h4 class="shop-item-title font-alt">
@@ -29,7 +29,7 @@
     <section class="module-small">
   <div class="container">
     <div class="row multi-columns-row">
-      
+
       <% @user.transactions.each do |transaction| %>
         <div class="col-sm-6 col-md-3 col-lg-3" data-aos="zoom-in-down" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
           <div class="shop-item">
@@ -45,7 +45,7 @@
           </div>
         </div>
       <% end %>
-      
+
     </div>
   </div>
 </section>
