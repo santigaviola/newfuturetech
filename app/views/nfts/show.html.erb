@@ -6,14 +6,14 @@
 <%= render 'shared/datosuser' %>
 <% end %>
   <h1 class= "text-center"><%= @nft.name %></h1>
-<div class="container mt-5">
+<div class="container mt-5 " id="cartita"data-aos="fade-right" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
 <div class="row" id="carta">
   <div class="imagen col-md-6 col-lg-6">
     <%= cl_image_tag @nft.photo.key  %>
     <p>Owner: <%= @nft.user.username %></p>
   </div>
 
-  <div class="description col-md-6 col-lg-6">
+  <div class="description col-md-6 col-lg-6"data-aos="fade-right" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
     <div>
     <h3>Description</h3>
     <%=@nft.description %>

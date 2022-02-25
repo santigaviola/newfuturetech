@@ -26,7 +26,7 @@
   <div class="container">
     <div class="row multi-columns-row">
       <% @nfts.each do |nft|  %>
-      <div class="col-sm-6 col-md-3 col-lg-3">
+      <div class="col-sm-6 col-md-3 col-lg-3" data-aos="zoom-in-down" data-aos-easing="ease-out-cubic" data-aos-duration="2000" >
         <div class="shop-item">
           <div class="shop-item-image"><%= cl_image_tag nft.photo.key, height: 300, width: 400, crop: :fill %>
             <div class="shop-item-detail"><a class="btn btn-round btn-b"><span
