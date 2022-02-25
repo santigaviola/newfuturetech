@@ -9,6 +9,9 @@
   justify-content: space-evenly;
   border: solid 0.5rem black;
   text-align: left;
+  background: hsl(0, 0%, 100% / 0.1);
+  backdrop-filter: blur(1rem);
+  background-color: rgba(0, 0, 0, 0.6);
 }
 #cartita {
   max-height: 90vh;
