@@ -29,16 +29,14 @@
     <div class="container">
       <div class="row multi-columns-row">
       <% @users.each do |user|  %>
-        <div class="col-sm-6 col-md-3 col-lg-3" data-aos="zoom-in-down" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
+        <div class="col-sm-6 col-md-3 col-lg-3" data-aos="zoom-in-down" data-aos-easing="ease-out-cubic" >
           <div class="shop-item">
-           <div class="shop-item-image">
+            <div class="shop-item-image">
             <% if user.nft.present? %>
-           <%= cl_image_tag user.nft.first.photo.key, height: 300, width: 400, crop: :fill, :cloud_name => "dh3mihvcm" %>
+            <%= cl_image_tag user.nft.first.photo.key, height: 300, width: 400, crop: :fill%>
             <% else  %>
-            <%= cl_image_tag "https://res.cloudinary.com/dh3mihvcm/image/upload/v1645806340/production/anonymous_dv1mzs_1_a1ob25.jpg"
-, height: 300, width: 400, crop: :fill, :cloud_name => "dh3mihvcm" %>
+            <%= cl_image_tag "https://res.cloudinary.com/alex97l/image/upload/v1645748813/anonymous_dv1mzs.jpg", height: 300, width: 400, crop: :fill  %>
             <% end  %>
-
               <div class="shop-item-detail"><a class="btn btn-round btn-b"><span class="icon-basket"><%= link_to 'More info', user_path(user), class: "btn btn-dark btn-lg" %></span></div>
             </div>
             <h4 class="shop-item-title font-alt">
