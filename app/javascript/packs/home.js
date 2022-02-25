@@ -68,7 +68,7 @@ scene.add(torus);
 // NFTS
 
 const cubegeometry = new THREE.BoxGeometry( 5, 5, 5 );
-const myTexture = new THREE.TextureLoader().load();
+const myTexture = new THREE.TextureLoader().load(image);
 const cubematerial = new THREE.MeshBasicMaterial({ map: myTexture });
 const cube = new THREE.Mesh( cubegeometry, cubematerial );
 cube.position.z -= 100
