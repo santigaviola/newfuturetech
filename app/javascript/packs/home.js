@@ -30,7 +30,7 @@ scene.add(pointLight, ambientLight);
 
 function addStar() {
   const geometry = new THREE.SphereGeometry(0.10, 24, 24);
-  const material = new THREE.MeshStandardMaterial({ color: white });
+  const material = new THREE.MeshStandardMaterial({ color: "0xADD8E6" });
   const star = new THREE.Mesh(geometry, material);
 
   const [x, y, z] = Array(3)
@@ -43,7 +43,7 @@ function addStar() {
 
 function addStar2() {
   const geometry = new THREE.SphereGeometry(0.10, 24, 24);
-  const material = new THREE.MeshStandardMaterial({ color: white });
+  const material = new THREE.MeshStandardMaterial({ color: "0xADD8E6" });
   const star = new THREE.Mesh(geometry, material);
 
   const [x, y, z] = Array(3)
