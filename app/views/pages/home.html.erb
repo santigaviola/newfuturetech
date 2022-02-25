@@ -1,11 +1,23 @@
 
 <script>
-  image = "<%= cl_image_path(@nfts[0].photo.key, :cloud_name => "dh3mihvcm") %>"
+  first1 = "<%= cl_image_path(@nfts[0].photo.key, :cloud_name => "dh3mihvcm") %>"
+  first2 = "<%= cl_image_path(@nfts[1].photo.key, :cloud_name => "dh3mihvcm") %>"
+  first3 = "<%= cl_image_path(@nfts[2].photo.key, :cloud_name => "dh3mihvcm") %>"
+  first4 = "<%= cl_image_path(@nfts[3].photo.key, :cloud_name => "dh3mihvcm") %>"
+  first5 = "<%= cl_image_path(@nfts[4].photo.key, :cloud_name => "dh3mihvcm") %>"
+
+  last1 = "<%= cl_image_path(@nfts[-1].photo.key, :cloud_name => "dh3mihvcm") %>"
+  last2 = "<%= cl_image_path(@nfts[-2].photo.key, :cloud_name => "dh3mihvcm") %>"
+  last3 = "<%= cl_image_path(@nfts[-3].photo.key, :cloud_name => "dh3mihvcm") %>"
+  last4 = "<%= cl_image_path(@nfts[-4].photo.key, :cloud_name => "dh3mihvcm") %>"
+  last5 = "<%= cl_image_path(@nfts[-5].photo.key, :cloud_name => "dh3mihvcm") %>"
 </script>
 
-<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br>
 <h1 class="white">3D NFTS</h1>
 <p class="white">WELCOME</p>
+
+<br><br>
 
 <canvas id="home"></canvas>
 <%= javascript_pack_tag 'home'%>
