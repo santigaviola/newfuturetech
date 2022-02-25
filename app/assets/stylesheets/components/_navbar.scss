@@ -2,7 +2,7 @@
   justify-content: space-between;
   background: hsl(0, 0%, 100% / 0.1);
   backdrop-filter: blur(1rem);
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba( 84, 84, 86, 0.6);
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -10,5 +10,9 @@
 }
 
 .navbar-lewagon .navbar-brand img {
+  border-radius: 50%;
   width: 40px;
+}
+a {
+  color: white;
 }

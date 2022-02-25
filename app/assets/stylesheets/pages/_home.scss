@@ -9,6 +9,7 @@ h1 {
   font-size: 65px;
   font-family: elevon, sans-serif;
   text-align: center;
+  text-shadow: 1px 1px 5px rgb(0, 0, 0);
 }
 a {
   text-decoration: none;
@@ -28,14 +29,21 @@ canvas {
   z-index: -100;
 }
 
+.white{
+  color: white!important;
+}
+
 body {
   font-family: elevon, sans-serif;
   letter-spacing: 1px;
   font-weight: 700;
   font-style: normal;
-  background-image: url(https://airwallpaper.com/wp-content/uploads/wall001/Abstract-White-Image-Free-Download.jpg);
+  background-image: url(https://res.cloudinary.com/dh3mihvcm/image/upload/v1645818078/production/nave_ypfwuz.png);
   background-size: cover;
   background-position: center;
+  padding-bottom: 20px;
+  color: #ffffff;
+  text-shadow: 1px 1px 2px black;
 }
 
 .bigger-box {
@@ -68,4 +76,7 @@ body {
 
 .orange {
   color: rgb(255, 145, 0);
+}
+img {
+  border-radius: 10px;
 }

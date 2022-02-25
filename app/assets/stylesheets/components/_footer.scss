@@ -4,7 +4,7 @@
   justify-content: space-between;
   height: 100px;
   padding: 0px 50px;
-  color: rgb(0, 0, 0);
+  color: white;
 }
 .footer-links {
   display: flex;
@@ -26,5 +26,5 @@
 .footer {
   background: hsl(0, 0%, 100% / 0.1);
   backdrop-filter: blur(1rem);
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba( 84, 84, 86, 0.6);
 }

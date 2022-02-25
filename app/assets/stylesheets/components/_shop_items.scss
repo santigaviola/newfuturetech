@@ -1,3 +1,5 @@
+@import url("https://use.typekit.net/jmk3xov.css");
+
 .shop-item {
   text-align: center;
   margin: 0 0 40px;
@@ -45,9 +47,11 @@
 
 .shop-item-title {
   font-weight: 400;
-  font-size: 14px;
-  color: #111;
+  font-size: 24px;
+  color: white;
+  text-shadow: 1px 1px 2px black;
   margin: 15px 0 5px;
+  font-family: elevon;
 }
 
 .shop-item:hover .shop-item-image:after {
