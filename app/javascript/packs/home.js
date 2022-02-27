@@ -163,6 +163,12 @@ function animate() {
   cubelast4.rotation.y += 0.01;
   cubelast5.rotation.y += 0.01;
 
+
+
+  if (camera.position.z > -80) {
+    camera.position.z -= 0.3
+  }
+
   renderer.render( scene, camera );
 };
 
